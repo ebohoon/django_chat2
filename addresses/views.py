@@ -96,6 +96,7 @@ def chat_service(request):
         input1 = request.POST['input1']
         response = faq_answer(input1)
 
+
         return HttpResponse(json.dumps(response), status=200)
     else:
         return render(request, 'addresses/chat_test.html')
