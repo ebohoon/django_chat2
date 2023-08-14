@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Addresses
+from .models import QA
 from .serializers import AddressesSerializer
 from rest_framework.parsers import JSONParser
 from django.contrib.auth.models import User
@@ -96,7 +96,8 @@ def chat_service(request):
         input1 = request.POST['input1']
         response = faq_answer(input1)
 
-
+        qa = QA(Q = input1,A = response)
+        qa.save()
         return HttpResponse(json.dumps(response), status=200)
     else:
         return render(request, 'addresses/chat_test.html')
@@ -108,3 +109,4 @@ def search_keywords(request):
         response = faq_search(input1)
 
         return HttpResponse(json.dumps(response), status=200)
+
