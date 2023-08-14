@@ -11,7 +11,7 @@ from konlpy.tag import Kkma
 
 # 파일로부터 모델을 읽는다. 없으면 생성한다.
 d2v_faqs = Doc2Vec.load('a.model')
-faqs = pd.read_csv('faq.csv')
+faqs = pd.read_csv('ChatbotData.csv')
 
 kkma = Kkma()
 filter_kkma = ['NNG',  #보통명사
@@ -44,16 +44,16 @@ def faq_answer(input):
     #     print("{}위. {}, {} {} {}".format(i + 1, result[i][1], result[i][0], faqs['질문'][result[i][0]], faqs['답변'][result[i][0]]))
     #     answer_list.append(dict(acc=result[i][1], question=faqs['질문'][result[i][0]], answer=faqs['답변'][result[i][0]]))
     #
-    return dict(acc1=result[0][1], question1=faqs['질문'][result[0][0]],answer1=faqs['답변'][result[0][0]],
-                acc2=result[1][1], question2=faqs['질문'][result[1][0]],answer2=faqs['답변'][result[1][0]],
-                acc3=result[2][1], question3=faqs['질문'][result[2][0]],answer3=faqs['답변'][result[2][0]],
-                acc4=result[3][1], question4=faqs['질문'][result[3][0]],answer4=faqs['답변'][result[3][0]],
-                acc5=result[4][1], question5=faqs['질문'][result[4][0]],answer5=faqs['답변'][result[4][0]],
-                acc6=result[5][1], question6=faqs['질문'][result[5][0]],answer6=faqs['답변'][result[5][0]],
-                acc7=result[6][1], question7=faqs['질문'][result[6][0]],answer7=faqs['답변'][result[6][0]],
-                acc8=result[7][1], question8=faqs['질문'][result[7][0]],answer8=faqs['답변'][result[7][0]],
-                acc9=result[8][1], question9=faqs['질문'][result[8][0]],answer9=faqs['답변'][result[8][0]],
-                acc10=result[9][1], question10=faqs['질문'][result[9][0]],answer10=faqs['답변'][result[9][0]])
+    return dict(acc1=result[0][1], question1=faqs['Q'][result[0][0]],answer1=faqs['A'][result[0][0]],
+                acc2=result[1][1], question2=faqs['Q'][result[1][0]],answer2=faqs['A'][result[1][0]],
+                acc3=result[2][1], question3=faqs['Q'][result[2][0]],answer3=faqs['A'][result[2][0]],
+                acc4=result[3][1], question4=faqs['Q'][result[3][0]],answer4=faqs['A'][result[3][0]],
+                acc5=result[4][1], question5=faqs['Q'][result[4][0]],answer5=faqs['A'][result[4][0]],
+                acc6=result[5][1], question6=faqs['Q'][result[5][0]],answer6=faqs['A'][result[5][0]],
+                acc7=result[6][1], question7=faqs['Q'][result[6][0]],answer7=faqs['A'][result[6][0]],
+                acc8=result[7][1], question8=faqs['Q'][result[7][0]],answer8=faqs['A'][result[7][0]],
+                acc9=result[8][1], question9=faqs['Q'][result[8][0]],answer9=faqs['A'][result[8][0]],
+                acc10=result[9][1], question10=faqs['Q'][result[9][0]],answer10=faqs['A'][result[9][0]])
 
 
 def faq_search(inputs):
