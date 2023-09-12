@@ -1,7 +1,7 @@
 # faq_chatbot_example
 doc2vec, django를 이용한 챗봇 예제입니다.
 
-# 사용 데이터 및 기술
+## 사용 데이터 및 기술
 데이터
 
 
@@ -15,7 +15,7 @@ doc2vec, django를 이용한 챗봇 예제입니다.
   * konlpy kkma: 한글 형태소 분석 패키지
 
 
-# 사용된 라이브러리 버전
+## 사용된 라이브러리 버전
 
 
 asgiref 3.7.2
